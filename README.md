@@ -80,7 +80,8 @@ helm repo add cnpg https://cloudnative-pg.github.io/charts
 ```
 
 ### Install helm charts
-> [!WARNING]If you want to enable monitoring in cnpg you must install prometheus operator CRDs. Hence we start with prometheus operator. This command will install `Prometheus`, `Grafana` and `Alert Manager`. These resources will use values from the `kube-stack-config.yaml` file
+> [!WARNING]
+If you want to enable monitoring in cnpg you must install prometheus operator CRDs. Hence we start with prometheus operator. This command will install `Prometheus`, `Grafana` and `Alert Manager`. These resources will use values from the `kube-stack-config.yaml` file
 
 ```bash
 helm upgrade --install prometheus-community \
