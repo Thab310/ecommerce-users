@@ -27,12 +27,22 @@ Event-Driven Architecture Challenges
 * Chatgpt
 
 ## Getting started
+
+Clone the repo vis SSH or HTTPS
+```bash
+#SSH
+git clone git@github.com:Thab310/ecommerce-users.git
+
+#HTTPS
+git clone git@github.com:Thab310/ecommerce-users.git
+
+````
 src
 ```bash
+cd src/
 go mod init <module>
 go mod tidy
 go get github.com/lib/pq #database driver for postgres
-
 ```
 Create a docker hub public repository
 
@@ -44,6 +54,7 @@ docker image ls
 docker login --username thabelo
 docker tag <image-id> thabelo/ecommerce-users:0.05
 docker push thabelo/ecommerce-users:0.05
+cd ..
 ```
 
 Start minikube local k8s cluster (comprised of 1 node which deploys both master pods and worker pods in 1 node )
@@ -112,6 +123,7 @@ kubectl get deployment -n cnpg-system
 
 ### Deploy postgresql cluster
 ```bash
+kubectl apply -f k8s/namespace.yaml
 kubectl apply -f k8s/database-cluster.yaml
 ```
 Addresses to communicate with our databases, use the one that ends with `-rw`
